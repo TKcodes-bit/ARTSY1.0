@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top left, #ffecc8 0, #fffdf7 45%, #fdf3dd 80%, #f7e1c3 100%);
+  color: #2c2620;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 246, 231, 0.9);
+  border-bottom: 1px solid rgba(215, 179, 132, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #4b3210;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a,
+nav button {
+  margin-left: 1rem;
+  color: #5b4025;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.app-main {
+  padding: 2rem 1.25rem;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.hero {
+  margin-bottom: 1.75rem;
+  padding: 1.5rem 1.25rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #fff7e8, #ffe0b2);
+  border: 1px solid rgba(222, 176, 120, 0.6);
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #4b3210;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 560px;
+  color: #6c4a2b;
+}
+
+.auth-card,
+.upload-card {
+  max-width: 420px;
+  margin: 2rem auto;
+  padding: 1.75rem;
+  background: #fffaf0;
+  border-radius: 1rem;
+  border: 1px solid rgba(220, 178, 122, 0.7);
+  box-shadow: 0 16px 40px rgba(173, 122, 69, 0.2);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: #6c4a2b;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  margin-top: 0.25rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(187, 143, 94, 0.7);
+  background: #fffdf7;
+  color: #2c2620;
+}
+
+button {
+  width: auto;
+  padding: 0.6rem 0.9rem;
+  margin-top: 0.25rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(187, 143, 94, 0.7);
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  cursor: pointer;
+  font-weight: 600;
+  color: #4b3210;
+}
+
+.logout-btn {
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(187, 143, 94, 0.8);
+  color: #5b4025;
+  width: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.art-card {
+  background: #fffaf0;
+  border-radius: 1rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(220, 178, 122, 0.8);
+  box-shadow: 0 10px 28px rgba(173, 122, 69, 0.18);
+}
+
+.art-3d-container {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.art-3d-view img {
+  width: 100%;
+  border-radius: 0.9rem;
+  transform: perspective(800px) rotateY(-6deg);
+  transition: transform 0.25s;
+  background: #fef5e8;
+}
+
+.art-3d-view img:hover {
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.chat-artist-btn {
+  margin-top: 0.6rem;
+}
+
+.chat-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1rem;
+  height: 70vh;
+}
+
+.chat-sidebar {
+  background: #fffaf0;
+  border-radius: 1rem;
+  border: 1px solid rgba(220, 178, 122, 0.7);
+  padding: 0.75rem;
+}
+
+.chat-main {
+  background: #fffaf0;
+  border-radius: 1rem;
+  border: 1px solid rgba(220, 178, 122, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 0.75rem;
+  overflow-y: auto;
+}
+
+.chat-message {
+  max-width: 70%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.chat-message.mine {
+  margin-left: auto;
+  background: #ffe1a8;
+  border: 1px solid #e4a850;
+}
+
+.chat-message.theirs {
+  background: #fff3da;
+  border: 1px solid rgba(220, 178, 122, 0.7);
+}
+
+.chat-input-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid rgba(220, 178, 122, 0.7);
+}
+
+.chat-input-bar input {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 0;
+}
+
+.search-bar button,
+.chat-input-bar button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
