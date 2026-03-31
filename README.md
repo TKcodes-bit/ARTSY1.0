@@ -6,6 +6,8 @@
 - Viewers can browse gallery
 - In-app **chat space** between users (similar idea to Facebook / IG DMs)
 - **No payment / transaction / delivery features** (removed on purpose)
+- Demo video Link : https://drive.google.com/file/d/13b0OCJBJV7GmMg2iBt4uS_gcDfRkJ_2h/view?usp=drive_link
+- Live URL:
 
 ## Structure
 
