@@ -5,10 +5,17 @@ import ArtworkCard from "../components/ArtworkCard.jsx";
 export default function GalleryPage() {
   const [artworks, setArtworks] = useState([]);
   const [q, setQ] = useState("");
+  const [error, setError] = useState("");
 
   async function load() {
-    const res = await api.get("/artworks", { params: { q } });
-    setArtworks(res.data);
+    try {
+      setError("");
+      const res = await api.get("/artworks", { params: { q } });
+      setArtworks(Array.isArray(res.data) ? res.data : []);
+    } catch (e) {
+      setArtworks([]);
+      setError(e.response?.data?.message || "Could not load artworks right now.");
+    }
   }
 
   useEffect(() => {
@@ -32,6 +39,7 @@ export default function GalleryPage() {
         />
         <button onClick={load}>Search</button>
       </div>
+      {error && <p className="error">{error}</p>}
       <div className="gallery-grid">
         {artworks.map((a) => (
           <ArtworkCard key={a._id} artwork={a} />
