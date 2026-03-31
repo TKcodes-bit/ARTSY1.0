@@ -73,6 +73,15 @@ class Message(db.Model):
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
 
 
+def init_db():
+    # Ensure tables exist when running under gunicorn/railway.
+    with app.app_context():
+        db.create_all()
+
+
+init_db()
+
+
 def to_user(u: User):
     return {
         "id": str(u.id),
